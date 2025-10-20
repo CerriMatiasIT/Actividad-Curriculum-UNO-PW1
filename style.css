@@ -1,0 +1,308 @@
+/* ========================================= */
+/* 1. Variables y Reset Básico */
+/* ========================================= */
+:root {
+    /* Colores primarios (para el tema claro inicial) */
+    --color-primario: #049bd0;
+    /* Celeste Intenso de la UNO */
+    --color-secundario: #4A4A4A;
+    /* Gris oscuro para texto/detalles */
+    --color-fondo: #F4F4F9;
+    /* Fondo muy claro (casi blanco) */
+    --color-texto-principal: #333;
+    /* Texto principal oscuro */
+    --color-fondo-seccion: #FFF;
+    /* Fondo de las secciones (blanco) */
+
+    /* Fuentes y bordes */
+    --fuente-principal: 'Arial', sans-serif;
+    --sombra-caja: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+}
+
+/* ========================================= */
+/* 2. Estructura y Contenedor Principal */
+/* ========================================= */
+main {
+    max-width: 900px;
+    /* Ancho máximo para el contenido central */
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--color-fondo-seccion);
+    box-shadow: var(--sombra-caja);
+    border-radius: 8px;
+}
+
+/* ========================================= */
+/* 3. Encabezado (Header) */
+/* ========================================= */
+header {
+    background-color: var(--color-primario);
+    color: #FFF;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    /* Bordes superiores redondeados */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+/* Estilo para el botón de tema (simplemente para que se vea) */
+.Boton-Dia-Noche {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+/* ========================================= */
+/* 4. Títulos de Sección (h2 y h3) */
+/* ========================================= */
+h2 {
+    color: var(--color-primario);
+    font-size: 1.8em;
+    border-bottom: 3px solid var(--color-primario);
+    padding-bottom: 5px;
+    margin: 25px 0 15px 0;
+}
+
+h3 {
+    color: var(--color-secundario);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* ========================================= */
+/* 5. Información Personal (Foto-Datos) */
+/* ========================================= */
+.Foto-Datos {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    /* Centra verticalmente */
+    border-bottom: 1px dashed #CCC;
+    /* Separador sutil */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Para manejo en móviles */
+}
+
+.Foto-Datos img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* Foto de perfil circular */
+    border: 3px solid var(--color-primario);
+    object-fit: cover;
+}
+
+/* Estilos específicos para la información (párrafos) */
+.Foto-Datos p {
+    margin: 5px 0;
+}
+
+.Foto-Datos a {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.Foto-Datos a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste de título "Sobre mi..." para que no interfiera con la imagen */
+.Foto-Datos h3 {
+    width: 100%;
+    /* Ocupa el ancho completo */
+    order: -1;
+    /* Lo mueve antes de los párrafos si se desea */
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+/* ========================================= */
+/* 5.1 Ajustes para Iconos de Font Awesome */
+/* ========================================= */
+
+/* Da color al icono dentro de los títulos (h2) */
+h2 .fas, h2 .fab {
+    color: var(--color-primario);
+    margin-right: 10px;
+}
+
+/* Da color a los iconos dentro de los datos de contacto y listas */
+.Foto-Datos .fas, 
+.Foto-Datos .fab,
+.Descripcion .fas,
+.Experiencia .fas,
+.Formacion .fas {
+    /* Usa el color primario de la universidad */
+    color: var(--color-primario); 
+    margin-right: 8px;
+    /* Para alinearlos bien con el texto */
+    width: 18px; 
+    text-align: center;
+}
+
+/* Asegura que los enlaces de LinkedIn mantengan el color primario */
+.Foto-Datos a .fab {
+    color: var(--color-primario);
+}
+
+/* Ajuste específico para los iconos en la lista de Formación */
+.Formacion li .fas {
+    color: var(--color-secundario); /* Los hacemos menos invasivos en la lista */
+}
+
+/* ========================================= */
+/* 6. Descripción, Experiencia y Formación */
+/* ========================================= */
+.Descripcion,
+.Experiencia {
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 3px solid var(--color-secundario);
+    /* Línea de detalle */
+}
+
+.Descripcion p:last-child,
+.Experiencia p:last-child {
+    font-weight: 500;
+    /* Destaca las habilidades o el resumen de logros */
+}
+
+/* Formación Académica */
+.Formacion ul,
+ul {
+    list-style: none;
+    /* Quita el punto predeterminado */
+    padding-left: 0;
+}
+
+.Formacion li,
+.lista-desordenada li {
+    background-color: var(--color-fondo);
+    /* Ligeramente diferente al fondo del main */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-left: 5px solid var(--color-primario);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.Formacion li:hover,
+.lista-desordenada li:hover {
+    background-color: rgba(4, 155, 208, 0.1);
+    /* Efecto hover sutil */
+}
+
+/* ========================================= */
+/* 7. Pie de Página (Footer) */
+/* ========================================= */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: var(--color-secundario);
+    border-top: 1px solid #EEE;
+}
+
+/* ========================================= */
+/* 8. Media Queries (Diseño Responsivo) */
+/* ========================================= */
+@media (max-width: 600px) {
+    main {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    /* En pantallas pequeñas, centra la imagen y los datos */
+    .Foto-Datos {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .Foto-Datos img {
+        margin: 0 auto 10px auto;
+    }
+
+    .Foto-Datos h3 {
+        text-align: left;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    .Boton-Dia-Noche {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* ========================================= */
+/* 9. Tema Oscuro (Reglas de Alternancia) */
+/* ========================================= */
+.dark-mode {
+    /* Redefinición de variables para el modo oscuro */
+    --color-secundario: #D4D4D4;
+    /* Gris claro para texto/detalles */
+    --color-fondo: #1A1A2E;
+    /* Fondo muy oscuro (azul marino) */
+    --color-texto-principal: #F4F4F9;
+    /* Texto principal claro */
+    --color-fondo-seccion: #282844;
+    /* Fondo de las secciones (más oscuro) */
+    --sombra-caja: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Sombra más visible en oscuro */
+}
+
+/* Ajustes específicos de elementos si es necesario */
+.dark-mode h2 {
+    /* El borde de los títulos cambia a color secundario (claro) */
+    border-bottom: 3px solid var(--color-secundario);
+}
+
+.dark-mode .Foto-Datos img {
+    /* El borde de la foto mantiene el primario intenso, pero si quieres puedes cambiarlo */
+    border: 3px solid var(--color-primario);
+}
+
+.dark-mode .Descripcion,
+.dark-mode .Experiencia {
+    /* La línea divisoria de las secciones cambia a color secundario */
+    border-left: 3px solid var(--color-secundario);
+}
+
+.dark-mode footer {
+    /* El borde superior del footer cambia a un color más visible en oscuro */
+    border-top: 1px solid #4A4A4A;
+}
